@@ -77,14 +77,7 @@ public class CurrencyConverter {
     // Get the JSON response from the API as a string
     private static String getString() throws IOException {
         // Create a URL object from the API URL string above
-        URL url = new URL(API_URL + "?apikey=" + API_KEY);
-
-        // Open a connection to the API URL above and set the request method to GET
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET"); // Set the request method to GET
-
-        // Create a BufferedReader to read the response from the API and store it in a StringBuilder
-        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        BufferedReader reader = getBufferedReader();
         StringBuilder response = new StringBuilder(); // Store the response here
         String line; // Store each line of the response here
 
@@ -96,6 +89,17 @@ public class CurrencyConverter {
 
         // Parse JSON response to get exchange rates
         return response.toString();
+    }
+
+    private static BufferedReader getBufferedReader() throws IOException {
+        URL url = new URL(API_URL + "?apikey=" + API_KEY);
+
+        // Open a connection to the API URL above and set the request method to GET
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET"); // Set the request method to GET
+
+        // Create a BufferedReader to read the response from the API and store it in a StringBuilder
+        return new BufferedReader(new InputStreamReader(connection.getInputStream()));
     }
 
     // Get the exchange rate for the given currency code from the JSON response
