@@ -4,6 +4,9 @@
 
 Currency_Converter_Calculator is a program that allows you to convert between different currencies and calculate the
 exchange rate.
+Using API, the exchange rate is updated every hour.
+You can convert any amount of money from one currency to another.
+You can also calculate the exchange rate between two currencies.
 
 ## Table of Contents
 
