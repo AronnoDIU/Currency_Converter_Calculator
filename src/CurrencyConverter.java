@@ -1,8 +1,8 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.BufferedReader; // For reading the response from the API
+import java.io.IOException; // For handling IO exceptions
+import java.io.InputStreamReader; // For reading the response from the API
+import java.net.HttpURLConnection; // For creating HTTP connections
+import java.net.URL; // For creating URL objects
 import java.util.Scanner;
 
 public class CurrencyConverter {
